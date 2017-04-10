@@ -14,6 +14,23 @@ android {
         targetSdkVersion 25
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        debug {
+            keyAlias 'android'
+            keyPassword 'android'
+            storePassword 'android'
+            storeFile file('../keystore/debug.keystore')
+        }
+        release {
+            keyAlias 'release'
+            keyPassword 'release!@#'
+            storePassword 'release!@#'
+            storeFile file('../keystore/release.keystore')
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled true
@@ -30,20 +47,6 @@ android {
         }
     }
 
-    signingConfigs {
-        debug {
-            keyAlias 'android'
-            keyPassword 'android'
-            storePassword 'android'
-            storeFile file('../keystore/debug.keystore')
-        }
-        release {
-            keyAlias 'release'
-            keyPassword 'release!@#'
-            storePassword 'release!@#'
-            storeFile file('../keystore/release.keystore')
-        }
-    }
 
 
     productFlavors {
