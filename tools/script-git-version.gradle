@@ -22,13 +22,17 @@ import org.ajoberstar.grgit.Grgit
 
 ext {
     git = Grgit.open(currentDir: projectDir)
-    gitVersionName = git.describe()
     gitVersionCode = git.tag.list().size()
     gitVersionCodeTime = git.head().time
+    gitBranch = git.branch.getCurrent().getName()
+    gitDescribe =git.describe()
+    gitVersionName = "$gitDescribe-$gitBranch"
+
 }
 
 task printVersion() {
     println("Version Name: $gitVersionName")
+    println("Branch Name: $gitBranch")
     println("Version Code: $gitVersionCode")
     println("Version Code Time: $gitVersionCodeTime")
 }
