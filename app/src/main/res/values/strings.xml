@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Relamplayground</string>
+    <string name="app_name">Realm playground</string>
+    <string name="status_output">Status Output…</string>
 </resources>
