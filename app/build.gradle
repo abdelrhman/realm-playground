@@ -73,8 +73,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    provided "org.projectlombok:lombok:1.16.16"
-    annotationProcessor "org.projectlombok:lombok:1.16.16"
-    provided 'org.glassfish:javax.annotation:10.0-b28'
     testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.7'
+    annotationProcessor 'org.projectlombok:lombok:1.16.16'
+    provided 'org.projectlombok:lombok:1.16.16'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
