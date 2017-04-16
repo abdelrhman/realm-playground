@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.abdelrhman.realmplayground.model.Person;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         rootLayout = ((LinearLayout) findViewById(R.id.container));
         rootLayout.removeAllViews();
         basicCRUD(realm);
+        basicQuery(realm);
+        basicLinkQuery(realm);
 
 
     }
@@ -78,6 +81,24 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = new TextView(this);
         tv.setText(txt);
         rootLayout.addView(tv);
+    }
+
+    private void basicQuery(Realm realm) {
+        showStatus("\nPerforming basic Query operation...");
+        showStatus("Number of persons: " + realm.where(Person.class).count());
+
+        RealmResults<Person> results = realm.where(Person.class).equalTo("age", 99).findAll();
+
+        showStatus("Size of result set: " + results.size());
+    }
+
+    private void basicLinkQuery(Realm realm) {
+        showStatus("\nPerforming basic Link Query operation...");
+        showStatus("Number of persons: " + realm.where(Person.class).count());
+
+        RealmResults<Person> results = realm.where(Person.class).equalTo("cats.name", "Tiger").findAll();
+
+        showStatus("Size of result set: " + results.size());
     }
 
 }
