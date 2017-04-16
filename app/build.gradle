@@ -53,13 +53,13 @@ android {
     productFlavors {
         dev {
             applicationId "com.abdelrhman.realmplayground.dev"
-            versionCode 1//gitVersionCodeTime
-            versionName "1.0"//gitVersionName
+            versionCode gitVersionCodeTime
+            versionName gitVersionName
         }
         prod {
             applicationId "com.abdelrhman.realmplayground"
-            versionCode 1//gitVersionCodeTime
-            versionName "1.0"//gitVersionName
+            versionCode gitVersionCodeTime
+            versionName gitVersionName
 
         }
     }
