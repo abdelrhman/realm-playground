@@ -36,41 +36,41 @@ public class MainActivity extends AppCompatActivity {
 
     private void basicCRUD(Realm realm) {
         showStatus("Perform basic Create/Read/Update/Delete (CRUD) operations...");
-//
-//        // All writes must be wrapped in a transaction to facilitate safe multi threading
-//        realm.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                // Add a person
-//                Person person = realm.createObject(Person.class);
-//                person.setId(1);
-//                person.setName("Young Person");
-//                person.setAge(14);
-//
-//            }
-//        });
 
-        // Find the first person (no query conditions) and read a field
-//        final Person person = realm.where(Person.class).findFirst();
-//        showStatus(person.getName() + ":" + person.getAge());
+        // All writes must be wrapped in a transaction to facilitate safe multi threading
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                // Add a person
+                Person person = realm.createObject(Person.class);
+                person.setId(1);
+                person.setName("Young Person");
+                person.setAge(14);
 
-//        // Update person in a transaction
-//        realm.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                person.setName("Senior Person");
-//                person.setAge(99);
-//                showStatus(person.getName() + " got older: " + person.getAge());
-//            }
-//        });
+            }
+        });
 
-        // Delete all persons
-//        realm.executeTransaction(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                realm.delete(Person.class);
-//            }
-//        });
+//        Find the first person (no query conditions)and read a field
+        final Person person = realm.where(Person.class).findFirst();
+        showStatus(person.getName() + ":" + person.getAge());
+
+        // Update person in a transaction
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                person.setName("Senior Person");
+                person.setAge(99);
+                showStatus(person.getName() + " got older: " + person.getAge());
+            }
+        });
+
+//      Delete all persons
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.delete(Person.class);
+            }
+        });
     }
 
     private void showStatus(String txt) {
