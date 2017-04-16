@@ -3,6 +3,7 @@ package com.abdelrhman.realmplayground.model;
 import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.Ignore;
+import io.realm.annotations.PrimaryKey;
 import lombok.Data;
 
 /**
@@ -11,7 +12,8 @@ import lombok.Data;
 
 @Data
 public class Person extends RealmObject {
-    private long id;
+    @PrimaryKey
+    private String id;
     private String name;
     private int age;
     private Dog dog;

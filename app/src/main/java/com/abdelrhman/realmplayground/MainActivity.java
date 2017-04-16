@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void execute(Realm realm) {
                 // Add a person
                 Person person = realm.createObject(Person.class);
-                person.setId(1);
+                person.setId("1");
                 person.setName("Young Person");
                 person.setAge(14);
 
