@@ -79,5 +79,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'org.projectlombok:lombok:1.16.16'
     provided 'org.projectlombok:lombok:1.16.16'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
 }

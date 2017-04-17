@@ -26,11 +26,7 @@
         <service android:name=".threadexample.WakefulReceivingService" />
 
         <activity android:name=".realmadapters.RealmAdaptersActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".realmadapters.ui.listview.ListViewExampleActivity"
@@ -38,7 +34,13 @@
         <activity
             android:name=".realmadapters.ui.recyclerview.RecyclerViewExampleActivity"
             android:label="RecyclerView Example" />
-        <activity android:name=".jsonexample.JsonExampleActivity"></activity>
+        <activity android:name=".jsonexample.JsonExampleActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
