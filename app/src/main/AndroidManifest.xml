@@ -13,13 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".gridview.GridActivity"></activity>
-        <activity android:name=".threadexample.ThreadExampleActivity">
-
-        </activity>
-        <activity android:name=".threadexample.ReceivingActivity">
-
-        </activity>
+        <activity android:name=".gridview.GridActivity" />
+        <activity android:name=".threadexample.ThreadExampleActivity"></activity>
+        <activity android:name=".threadexample.ReceivingActivity"></activity>
 
         <service
             android:name=".threadexample.ReceivingService"
@@ -42,6 +38,7 @@
         <activity
             android:name=".realmadapters.ui.recyclerview.RecyclerViewExampleActivity"
             android:label="RecyclerView Example" />
+        <activity android:name=".jsonexample.JsonExampleActivity"></activity>
     </application>
 
 </manifest>
